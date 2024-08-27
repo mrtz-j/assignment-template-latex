@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: '0'
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v3
         with:
           root_file: src/template.tex
           args: -pdf -shell-escape -interaction=nonstopmode -output-directory=.build
