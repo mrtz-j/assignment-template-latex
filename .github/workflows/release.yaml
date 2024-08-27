@@ -40,7 +40,9 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: src/template.tex
-          args: -pdf -shell-escape -interaction=nonstopmode -output-directory=.build
+          texlive_version: 2023
+          latexmk_shell_escape: true
+          args: -pdf -interaction=nonstopmode -output-directory=.build -f
       - name: Upload Release Asset - Template
         uses: actions/upload-release-asset@v1
         env:
