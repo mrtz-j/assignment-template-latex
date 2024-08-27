@@ -18,4 +18,4 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: src/template.tex
-          args: -pdf -shell-escape -interaction=nonstopmode -output-directory=build
+          args: -pdf -shell-escape -interaction=nonstopmode -output-directory=.build
