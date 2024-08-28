@@ -17,4 +17,17 @@ jobs:
       - name: Compile LaTeX document - Template
         uses: dante-ev/latex-action@master
         with:
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+          root_file: ./src/template.tex
+      - name: Compile BibTex - Template
+        uses: dante-ev/latex-action@latest
+        with:
+          compiler: bibtex
+          root_file: ./src/template.aux
+      - name: Compile LaTeX document - Template
+        uses: dante-ev/latex-action@master
+        with:
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
           root_file: ./src/template.tex
