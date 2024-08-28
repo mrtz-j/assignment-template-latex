@@ -18,3 +18,4 @@ jobs:
         uses: dante-ev/latex-action@master
         with:
           working_directory: ./src
+          root_file: template.tex
