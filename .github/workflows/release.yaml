@@ -39,6 +39,7 @@ jobs:
       - name: Compile LaTeX document - Template
         uses: dante-ev/latex-action@master
         with:
+          working_directory: ./src
           root_file: ./src/template.tex
       - name: Upload Release Asset - Template
         uses: actions/upload-release-asset@v1
