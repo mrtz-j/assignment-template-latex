@@ -10,8 +10,8 @@ $ENV{'TEXINPUTS'}=join(':', @texinputs);
 
 ### -- Output options --------------------------------------------------------
 
-#$quiet  = 1;
-#$silent = 1;
+$quiet  = 1;
+$silent = 1;
 
 # -- Build options -----------------------------------------------------------
 
@@ -24,11 +24,13 @@ $pdf_mode = 1;  # Generate PDF using pdflatex
 #$pdf_mode = 4;  # Generate PDF using lualatex
 #$pdf_mode = 5;  # Generate PDF using xelatex
 
+$max_repeat = 5; # Try 5 times at maximum then give up
+
 # Bibtex/biber
 #
 #$bibtex_use = 0;    # Do not use bibtex/biber
 #$bibtex_use = 1;    # Use bibtex/biber. On clean, keep .bbl files
-$bibtex_use = 1.5;  # Use bibtex/biber. On clean, keep .bbl files if no .bib
+#$bibtex_use = 1.5;  # Use bibtex/biber. On clean, keep .bbl files if no .bib
 #$bibtex_use = 2;    # Use bibtex/biber. On clean, remove .bbl files
 
 # Other options
