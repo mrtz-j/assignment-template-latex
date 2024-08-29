@@ -8,10 +8,18 @@
 );
 $ENV{'TEXINPUTS'}=join(':', @texinputs);
 
+# BibTeX search paths
+@bibinputs = (
+    '.',                                        # Current directory
+    './Conference-LaTeX-template_10-17-19/',    # IEEE Template dir
+    '',                                         # Default search paths
+);
+$ENV{'BIBINPUTS'}=join(':', @bibinputs);
+
 ### -- Output options --------------------------------------------------------
 
-#$quiet  = 1;
-#$silent = 1;
+$quiet  = 1;
+$silent = 1;
 
 # -- Build options -----------------------------------------------------------
 
@@ -34,3 +42,4 @@ $bibtex_use = 1.5;  # Use bibtex/biber. On clean, keep .bbl files if no .bib
 # Other options
 #
 $max_repeat = 5; # Try 5 times at maximum then give up
+$force_mode = 1; # Force build even if files are up to date

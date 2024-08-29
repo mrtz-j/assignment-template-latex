@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: '0'
       - name: Create initial tag
@@ -36,13 +36,11 @@ jobs:
           name: Version ${{ steps.bump.outputs.new_tag }}
           draft: false
           prerelease: false
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
+      - name: Compile LaTeX document - Template
+        uses: dante-ev/latex-action@master
         with:
-          root_file: src/template.tex
-          texlive_version: 2023
-          latexmk_shell_escape: true
-          args: -pdf -interaction=nonstopmode -output-directory=.build -f
+          working_directory: ./src
+          root_file: template.tex
       - name: Upload Release Asset - Template
         uses: actions/upload-release-asset@v1
         env:
